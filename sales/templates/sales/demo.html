@@ -1,0 +1,15 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {{ request.user.username }}，您好！
+    {% else %}
+        请登陆，这里放登陆链接
+    {% endif %}
+    <p/>
+    {{ request.path }}
+    <p/>
+    {% for key, foo in s.items %}
+        {{ foo }}<p/>
+    {% endfor %}
+{% endblock %}
